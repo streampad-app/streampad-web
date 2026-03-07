@@ -172,7 +172,9 @@
   .footer-col a:hover { color: var(--accent-light); }
   .footer-bottom { max-width: 1100px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-dim); }
 
-  .en { display: none; }
+  /* 言語切り替え: bodyクラスベース */
+  body:not(.lang-en) .en { display: none !important; }
+  body.lang-en .ja { display: none !important; }
 
   /* ===== レスポンシブ ===== */
   @media (max-width: 900px) {
@@ -206,15 +208,15 @@
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
     <div class="nav-links">
       <a href="#features" class="ja">機能</a>
-      <a href="#features" class="en" style="display:none">Features</a>
+      <a href="#features" class="en">Features</a>
       <a href="#apps" class="ja">対応アプリ</a>
-      <a href="#apps" class="en" style="display:none">Apps</a>
+      <a href="#apps" class="en">Apps</a>
       <a href="#pricing" class="ja">価格</a>
-      <a href="#pricing" class="en" style="display:none">Pricing</a>
+      <a href="#pricing" class="en">Pricing</a>
       <a href="#download" class="ja">ダウンロード</a>
-      <a href="#download" class="en" style="display:none">Download</a>
+      <a href="#download" class="en">Download</a>
       <a href="support.html" class="ja">サポート</a>
-      <a href="support.html" class="en" style="display:none">Support</a>
+      <a href="support.html" class="en">Support</a>
       <div class="lang-toggle">
         <button class="active" onclick="showLang('ja')">JP</button>
         <button onclick="showLang('en')">EN</button>
@@ -747,47 +749,64 @@
     <div class="footer-brand">
       <div class="nav-logo">Stream<span>Pad</span></div>
       <p class="ja">iPhone/iPadをカスタマイズ自在なコントロールデッキに変えるアプリ。</p>
-      <p class="en" style="display:none">Transform your iPhone/iPad into a customizable control deck.</p>
+      <p class="en">Transform your iPhone/iPad into a customizable control deck.</p>
     </div>
     <div class="footer-col">
       <h4 class="ja">プロダクト</h4>
-      <h4 class="en" style="display:none">Product</h4>
+      <h4 class="en">Product</h4>
       <a href="#features" class="ja">機能</a>
-      <a href="#features" class="en" style="display:none">Features</a>
+      <a href="#features" class="en">Features</a>
       <a href="#pricing" class="ja">価格</a>
-      <a href="#pricing" class="en" style="display:none">Pricing</a>
+      <a href="#pricing" class="en">Pricing</a>
       <a href="#download" class="ja">ダウンロード</a>
-      <a href="#download" class="en" style="display:none">Download</a>
+      <a href="#download" class="en">Download</a>
     </div>
     <div class="footer-col">
       <h4 class="ja">サポート</h4>
-      <h4 class="en" style="display:none">Support</h4>
+      <h4 class="en">Support</h4>
       <a href="support.html" class="ja">よくある質問</a>
-      <a href="support.html" class="en" style="display:none">FAQ</a>
+      <a href="support.html" class="en">FAQ</a>
       <a href="mailto:streampad.app@gmail.com" class="ja">お問い合わせ</a>
-      <a href="mailto:streampad.app@gmail.com" class="en" style="display:none">Contact</a>
+      <a href="mailto:streampad.app@gmail.com" class="en">Contact</a>
     </div>
     <div class="footer-col">
       <h4 class="ja">法的情報</h4>
-      <h4 class="en" style="display:none">Legal</h4>
+      <h4 class="en">Legal</h4>
       <a href="privacy_policy.html" class="ja">プライバシーポリシー</a>
-      <a href="privacy_policy.html" class="en" style="display:none">Privacy Policy</a>
+      <a href="privacy_policy.html" class="en">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
     <p>&copy; 2026 StreamPad. All rights reserved.</p>
     <p class="ja">日本語 / English 対応</p>
-    <p class="en" style="display:none">Japanese / English supported</p>
+    <p class="en">Japanese / English supported</p>
   </div>
 </footer>
 
 <script>
 function showLang(lang) {
-  document.querySelectorAll('.ja').forEach(el => el.style.display = lang === 'ja' ? '' : 'none');
-  document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+  if (lang === 'en') {
+    document.body.classList.add('lang-en');
+    document.documentElement.lang = 'en';
+  } else {
+    document.body.classList.remove('lang-en');
+    document.documentElement.lang = 'ja';
+  }
   document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
+  document.querySelectorAll('.lang-toggle button').forEach(b => {
+    if ((lang === 'ja' && b.textContent === 'JP') || (lang === 'en' && b.textContent === 'EN')) {
+      b.classList.add('active');
+    }
+  });
+  try { localStorage.setItem('streampad-lang', lang); } catch(e) {}
 }
+// 初期化: 保存された言語設定を復元
+(function() {
+  try {
+    var saved = localStorage.getItem('streampad-lang');
+    if (saved === 'en') showLang('en');
+  } catch(e) {}
+})();
 </script>
 </body>
 </html>
