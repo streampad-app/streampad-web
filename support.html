@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamPad - Support / サポート</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; background: #fafafa; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #16213e; padding-bottom: 10px; }
+  h2 { color: #16213e; margin-top: 30px; }
+  .lang-toggle { text-align: center; margin: 20px 0; }
+  .lang-toggle button { padding: 8px 20px; margin: 0 5px; border: 1px solid #16213e; background: white; color: #16213e; border-radius: 5px; cursor: pointer; font-size: 14px; }
+  .lang-toggle button.active { background: #16213e; color: white; }
+  .section { margin-bottom: 20px; }
+  .faq { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin: 10px 0; }
+  .faq h3 { margin-top: 0; color: #0f3460; }
+  .en { display: none; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button class="active" onclick="showLang('ja')">日本語</button>
+  <button onclick="showLang('en')">English</button>
+</div>
+
+<!-- 日本語 -->
+<div class="ja">
+<h1>StreamPad サポート</h1>
+
+<div class="section">
+<h2>お問い合わせ</h2>
+<p>バグ報告、機能要望、その他のお問い合わせは下記メールアドレスまでお送りください。</p>
+<p>メール: <a href="mailto:streampad.app@gmail.com">streampad.app@gmail.com</a></p>
+</div>
+
+<div class="section">
+<h2>よくある質問（FAQ）</h2>
+
+<div class="faq">
+<h3>Q: コンパニオンアプリとの接続方法は？</h3>
+<p>A: iPhone/iPadとMac/PCが同じWi-Fiネットワークに接続されていることを確認してください。macOS版は「StreamPad Companion」をメニューバーから起動し、iOS側でスキャンすると自動検出されます。</p>
+</div>
+
+<div class="faq">
+<h3>Q: オーディオミキサーが動作しません</h3>
+<p>A: macOSの場合、「システム設定 > プライバシーとセキュリティ > 画面収録」でStreamPad Companionを許可してください。オーディオキャプチャにはmacOS 14.2以降が必要です。</p>
+</div>
+
+<div class="faq">
+<h3>Q: Pro版にアップグレードするには？</h3>
+<p>A: 設定画面から「Pro版にアップグレード」をタップしてください。Pro版ではアイテム数の制限解除、広告非表示などの機能が利用できます。</p>
+</div>
+
+<div class="faq">
+<h3>Q: テーマの変更方法は？</h3>
+<p>A: 設定画面の「テーマ」セクションから好きなテーマを選択できます。19種類のテーマ（ベーシック10 + リッチ9）からお選びいただけます。</p>
+</div>
+
+<div class="faq">
+<h3>Q: 対応デバイスは？</h3>
+<p>A: iOS 16以降のiPhone/iPad、macOS 13以降のMac、Windows 10/11のPCに対応しています。</p>
+</div>
+</div>
+</div>
+
+<!-- English -->
+<div class="en">
+<h1>StreamPad Support</h1>
+
+<div class="section">
+<h2>Contact Us</h2>
+<p>For bug reports, feature requests, or other inquiries, please email us at:</p>
+<p>Email: <a href="mailto:streampad.app@gmail.com">streampad.app@gmail.com</a></p>
+</div>
+
+<div class="section">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq">
+<h3>Q: How do I connect to the companion app?</h3>
+<p>A: Make sure your iPhone/iPad and Mac/PC are on the same Wi-Fi network. Launch "StreamPad Companion" from the menu bar on macOS, then scan from the iOS app to auto-discover it.</p>
+</div>
+
+<div class="faq">
+<h3>Q: The audio mixer isn't working</h3>
+<p>A: On macOS, go to System Settings > Privacy & Security > Screen Recording and allow StreamPad Companion. Audio capture requires macOS 14.2 or later.</p>
+</div>
+
+<div class="faq">
+<h3>Q: How do I upgrade to Pro?</h3>
+<p>A: Tap "Upgrade to Pro" in the Settings screen. Pro unlocks unlimited items, removes ads, and more.</p>
+</div>
+
+<div class="faq">
+<h3>Q: How do I change themes?</h3>
+<p>A: Go to the "Theme" section in Settings and select your preferred theme. Choose from 19 themes (10 basic + 9 rich).</p>
+</div>
+
+<div class="faq">
+<h3>Q: What devices are supported?</h3>
+<p>A: iPhone/iPad with iOS 16+, Mac with macOS 13+, and Windows 10/11 PCs.</p>
+</div>
+</div>
+</div>
+
+<script>
+function showLang(lang) {
+  document.querySelector('.ja').style.display = lang === 'ja' ? 'block' : 'none';
+  document.querySelector('.en').style.display = lang === 'en' ? 'block' : 'none';
+  document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
