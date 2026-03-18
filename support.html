@@ -3,114 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StreamPad - Support / サポート</title>
+<title>StreamPad - Support</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; background: #fafafa; }
-  h1 { color: #1a1a2e; border-bottom: 2px solid #16213e; padding-bottom: 10px; }
-  h2 { color: #16213e; margin-top: 30px; }
-  .lang-toggle { text-align: center; margin: 20px 0; }
-  .lang-toggle button { padding: 8px 20px; margin: 0 5px; border: 1px solid #16213e; background: white; color: #16213e; border-radius: 5px; cursor: pointer; font-size: 14px; }
-  .lang-toggle button.active { background: #16213e; color: white; }
-  .section { margin-bottom: 20px; }
-  .faq { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin: 10px 0; }
-  .faq h3 { margin-top: 0; color: #0f3460; }
-  .en { display: none; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --bg-primary: #08081a; --bg-card: #10102a; --border: #1a1a3e; --accent: #6c63ff; --accent-light: #a78bfa; --text-primary: #eeeef0; --text-secondary: #8888a0; --text-dim: #55556a; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif; color: var(--text-secondary); background: var(--bg-primary); line-height: 1.7; }
+  a { color: var(--accent-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,26,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 14px 24px; }
+  .nav-logo { font-size: 22px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.5px; }
+  .nav-logo span { background: linear-gradient(135deg, var(--accent), #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .nav-right a { color: var(--text-secondary); font-size: 14px; font-weight: 500; text-decoration: none; }
+  .nav-right a:hover { color: var(--text-primary); }
+  .lang-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .lang-toggle button { padding: 4px 10px; border: none; background: transparent; color: var(--text-dim); cursor: pointer; font-size: 11px; font-weight: 600; transition: all 0.2s; }
+  .lang-toggle button.active { background: var(--accent); color: #fff; }
+  .content { max-width: 800px; margin: 0 auto; padding: 100px 24px 60px; }
+  h1 { font-size: 32px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+  h2 { font-size: 20px; font-weight: 700; color: var(--text-primary); margin-top: 40px; margin-bottom: 16px; }
+  p { margin-bottom: 12px; }
+  .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 32px; }
+  .contact-card p { margin-bottom: 8px; }
+  .faq { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: border-color 0.3s; }
+  .faq:hover { border-color: rgba(108,99,255,0.3); }
+  .faq h3 { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+  .faq p { font-size: 14px; color: var(--text-secondary); margin-bottom: 0; }
+  body:not(.lang-en) .en { display: none !important; }
+  body.lang-en .ja { display: none !important; }
+  footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 12px; color: var(--text-dim); }
 </style>
 </head>
 <body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" style="text-decoration:none">Stream<span>Pad</span></a>
+    <div class="nav-right">
+      <a href="index.html" class="ja">Home</a>
+      <a href="index.html" class="en">Home</a>
+      <a href="privacy_policy.html" class="ja">Privacy</a>
+      <a href="privacy_policy.html" class="en">Privacy</a>
+      <div class="lang-toggle">
+        <button class="active" onclick="showLang('ja')">JP</button>
+        <button onclick="showLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
 
-<div class="lang-toggle">
-  <button class="active" onclick="showLang('ja')">日本語</button>
-  <button onclick="showLang('en')">English</button>
-</div>
-
+<div class="content">
 <!-- 日本語 -->
 <div class="ja">
-<h1>StreamPad サポート</h1>
+<h1>サポート</h1>
 
-<div class="section">
-<h2>お問い合わせ</h2>
+<div class="contact-card">
+<h2 style="margin-top:0">お問い合わせ</h2>
 <p>バグ報告、機能要望、その他のお問い合わせは下記メールアドレスまでお送りください。</p>
 <p>メール: <a href="mailto:streampad.app@gmail.com">streampad.app@gmail.com</a></p>
 </div>
 
-<div class="section">
 <h2>よくある質問（FAQ）</h2>
 
 <div class="faq">
 <h3>Q: コンパニオンアプリとの接続方法は？</h3>
-<p>A: iPhone/iPadとMac/PCが同じWi-Fiネットワークに接続されていることを確認してください。macOS版は「StreamPad Companion」をメニューバーから起動し、iOS側でスキャンすると自動検出されます。</p>
+<p>iPhone/iPadとMac/PCが同じWi-Fiネットワークに接続されていることを確認してください。macOS版は「StreamPad Companion」をメニューバーから起動し、iOS側でスキャンすると自動検出されます。</p>
+</div>
+
+<div class="faq">
+<h3>Q: ボタンを押してもMac/PCが反応しません</h3>
+<p>macOSの場合、「システム設定 > プライバシーとセキュリティ > アクセシビリティ」でStreamPad Companionが許可されていることを確認してください。許可済みでも反応しない場合は、一度リストから削除して再起動し、再度許可してください。macOSアップデート後に権限がリセットされることがあります。</p>
 </div>
 
 <div class="faq">
 <h3>Q: オーディオミキサーが動作しません</h3>
-<p>A: macOSの場合、「システム設定 > プライバシーとセキュリティ > 画面収録」でStreamPad Companionを許可してください。オーディオキャプチャにはmacOS 14.2以降が必要です。</p>
+<p>macOSの場合、「システム設定 > プライバシーとセキュリティ > 画面収録」でStreamPad Companionを許可してください。オーディオキャプチャにはmacOS 14.2以降が必要です。</p>
 </div>
 
 <div class="faq">
 <h3>Q: Pro版にアップグレードするには？</h3>
-<p>A: 設定画面から「Pro版にアップグレード」をタップしてください。Pro版ではアイテム数の制限解除、広告非表示などの機能が利用できます。</p>
+<p>設定画面から「Pro版にアップグレード」をタップしてください。Pro版ではアイテム数の制限解除、広告非表示などの機能が利用できます。</p>
 </div>
 
 <div class="faq">
 <h3>Q: テーマの変更方法は？</h3>
-<p>A: 設定画面の「テーマ」セクションから好きなテーマを選択できます。19種類のテーマ（ベーシック10 + リッチ9）からお選びいただけます。</p>
+<p>設定画面の「テーマ」セクションから好きなテーマを選択できます。18種類のテーマからお選びいただけます。</p>
 </div>
 
 <div class="faq">
 <h3>Q: 対応デバイスは？</h3>
-<p>A: iOS 16以降のiPhone/iPad、macOS 13以降のMac、Windows 10/11のPCに対応しています。</p>
-</div>
+<p>iOS 16以降のiPhone/iPad、macOS 13以降のMac、Windows 10/11のPCに対応しています。</p>
 </div>
 </div>
 
 <!-- English -->
 <div class="en">
-<h1>StreamPad Support</h1>
+<h1>Support</h1>
 
-<div class="section">
-<h2>Contact Us</h2>
+<div class="contact-card">
+<h2 style="margin-top:0">Contact Us</h2>
 <p>For bug reports, feature requests, or other inquiries, please email us at:</p>
 <p>Email: <a href="mailto:streampad.app@gmail.com">streampad.app@gmail.com</a></p>
 </div>
 
-<div class="section">
 <h2>Frequently Asked Questions</h2>
 
 <div class="faq">
 <h3>Q: How do I connect to the companion app?</h3>
-<p>A: Make sure your iPhone/iPad and Mac/PC are on the same Wi-Fi network. Launch "StreamPad Companion" from the menu bar on macOS, then scan from the iOS app to auto-discover it.</p>
+<p>Make sure your iPhone/iPad and Mac/PC are on the same Wi-Fi network. Launch "StreamPad Companion" from the menu bar on macOS, then scan from the iOS app to auto-discover it.</p>
+</div>
+
+<div class="faq">
+<h3>Q: Buttons don't work on Mac/PC</h3>
+<p>On macOS, make sure StreamPad Companion is allowed in System Settings > Privacy & Security > Accessibility. If it's already enabled but not responding, remove it from the list, restart the app, and re-enable. macOS updates may reset permissions.</p>
 </div>
 
 <div class="faq">
 <h3>Q: The audio mixer isn't working</h3>
-<p>A: On macOS, go to System Settings > Privacy & Security > Screen Recording and allow StreamPad Companion. Audio capture requires macOS 14.2 or later.</p>
+<p>On macOS, go to System Settings > Privacy & Security > Screen Recording and allow StreamPad Companion. Audio capture requires macOS 14.2 or later.</p>
 </div>
 
 <div class="faq">
 <h3>Q: How do I upgrade to Pro?</h3>
-<p>A: Tap "Upgrade to Pro" in the Settings screen. Pro unlocks unlimited items, removes ads, and more.</p>
+<p>Tap "Upgrade to Pro" in the Settings screen. Pro unlocks unlimited items, removes ads, and more.</p>
 </div>
 
 <div class="faq">
 <h3>Q: How do I change themes?</h3>
-<p>A: Go to the "Theme" section in Settings and select your preferred theme. Choose from 19 themes (10 basic + 9 rich).</p>
+<p>Go to the "Theme" section in Settings and select your preferred theme. Choose from 18 themes.</p>
 </div>
 
 <div class="faq">
 <h3>Q: What devices are supported?</h3>
-<p>A: iPhone/iPad with iOS 16+, Mac with macOS 13+, and Windows 10/11 PCs.</p>
+<p>iPhone/iPad with iOS 16+, Mac with macOS 13+, and Windows 10/11 PCs.</p>
 </div>
 </div>
 </div>
 
+<footer>&copy; 2026 StreamPad. All rights reserved.</footer>
+
 <script>
 function showLang(lang) {
-  document.querySelector('.ja').style.display = lang === 'ja' ? 'block' : 'none';
-  document.querySelector('.en').style.display = lang === 'en' ? 'block' : 'none';
-  document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
+  if (lang === 'en') { document.body.classList.add('lang-en'); document.documentElement.lang = 'en'; }
+  else { document.body.classList.remove('lang-en'); document.documentElement.lang = 'ja'; }
+  document.querySelectorAll('.lang-toggle button').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.lang-toggle button').forEach(function(b) {
+    if ((lang === 'ja' && b.textContent === 'JP') || (lang === 'en' && b.textContent === 'EN')) b.classList.add('active');
+  });
+  try { localStorage.setItem('streampad-lang', lang); } catch(e) {}
 }
+(function() { try { var s = localStorage.getItem('streampad-lang'); if (s === 'en') showLang('en'); } catch(e) {} })();
 </script>
 </body>
 </html>

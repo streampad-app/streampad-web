@@ -9,6 +9,13 @@
 <meta property="og:description" content="Your iPhone is now a pro control surface. 30 app presets, zero setup.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://streampad-app.github.io/streampad-web/">
+<meta property="og:image" content="https://streampad-app.github.io/streampad-web/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://streampad-app.github.io/streampad-web/images/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <style>
   /* ===== リセット & ベース ===== */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -86,6 +93,27 @@
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--accent-glow); }
   .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; background: transparent; color: var(--text-primary); border: 1px solid var(--border); border-radius: 14px; font-size: 16px; font-weight: 600; transition: all 0.25s; cursor: pointer; }
   .btn-secondary:hover { border-color: var(--accent); background: rgba(108, 99, 255, 0.06); }
+
+  /* ===== ヒーロースクショ ===== */
+  .hero-screenshots { display: flex; justify-content: center; gap: 24px; margin-top: 56px; perspective: 1000px; }
+  .hero-screenshots .phone-frame { width: 200px; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(108, 99, 255, 0.3), 0 0 0 1px rgba(108, 99, 255, 0.15); transition: transform 0.4s; }
+  .hero-screenshots .phone-frame:hover { transform: translateY(-8px) scale(1.02); }
+  .hero-screenshots .phone-frame img { width: 100%; height: auto; display: block; }
+  .hero-screenshots .phone-frame:nth-child(1) { transform: rotate(-4deg); }
+  .hero-screenshots .phone-frame:nth-child(2) { transform: translateY(-16px); z-index: 2; }
+  .hero-screenshots .phone-frame:nth-child(3) { transform: rotate(4deg); }
+  .hero-screenshots .phone-frame:nth-child(1):hover { transform: rotate(-4deg) translateY(-8px) scale(1.02); }
+  .hero-screenshots .phone-frame:nth-child(3):hover { transform: rotate(4deg) translateY(-8px) scale(1.02); }
+  @media (max-width: 700px) {
+    .hero-screenshots { gap: 12px; }
+    .hero-screenshots .phone-frame { width: 120px; border-radius: 16px; }
+  }
+
+  /* ===== ハイライトスクショ ===== */
+  .highlight-visual img.screenshot { max-width: 220px; border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.4); position: relative; z-index: 1; }
+  @media (max-width: 700px) {
+    .highlight-visual img.screenshot { max-width: 180px; }
+  }
 
   /* ===== 数字バー ===== */
   .stats-bar { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0; }
@@ -241,6 +269,11 @@
       <a href="#download" class="btn-primary">&#63743; App Store でダウンロード</a>
       <a href="#features" class="btn-secondary">機能を見る &#8595;</a>
     </div>
+    <div class="hero-screenshots">
+      <div class="phone-frame"><img src="images/feature-mixer.png" alt="Audio Mixer" loading="lazy"></div>
+      <div class="phone-frame"><img src="images/hero-dashboard.png" alt="StreamPad Dashboard" loading="lazy"></div>
+      <div class="phone-frame"><img src="images/feature-theme.png" alt="Retro Theme" loading="lazy"></div>
+    </div>
   </div>
 </section>
 
@@ -302,10 +335,7 @@
   <div class="section-inner">
     <div class="highlight">
       <div class="highlight-visual">
-        <div class="visual-content">
-          <div class="big-emoji">&#127911;</div>
-          <div class="visual-label">Audio Mixer & EQ</div>
-        </div>
+        <img class="screenshot" src="images/feature-mixer.png" alt="Audio Mixer & EQ" loading="lazy">
       </div>
       <div class="highlight-text">
         <div class="section-label">Audio Mixer</div>
@@ -323,10 +353,7 @@
 
     <div class="highlight reverse">
       <div class="highlight-visual">
-        <div class="visual-content">
-          <div class="big-emoji">&#128279;</div>
-          <div class="visual-label">Shortcuts & Webhook</div>
-        </div>
+        <img class="screenshot" src="images/feature-shortcuts.png" alt="Shortcuts & Actions" loading="lazy">
       </div>
       <div class="highlight-text">
         <div class="section-label">Integrations</div>
@@ -503,6 +530,11 @@
       <a href="#download" class="btn-primary">&#63743; Download on the App Store</a>
       <a href="#features" class="btn-secondary">See Features &#8595;</a>
     </div>
+    <div class="hero-screenshots">
+      <div class="phone-frame"><img src="images/feature-mixer.png" alt="Audio Mixer" loading="lazy"></div>
+      <div class="phone-frame"><img src="images/hero-dashboard.png" alt="StreamPad Dashboard" loading="lazy"></div>
+      <div class="phone-frame"><img src="images/feature-theme.png" alt="Retro Theme" loading="lazy"></div>
+    </div>
   </div>
 </section>
 
@@ -561,10 +593,7 @@
   <div class="section-inner">
     <div class="highlight">
       <div class="highlight-visual">
-        <div class="visual-content">
-          <div class="big-emoji">&#127911;</div>
-          <div class="visual-label">Audio Mixer & EQ</div>
-        </div>
+        <img class="screenshot" src="images/feature-mixer.png" alt="Audio Mixer & EQ" loading="lazy">
       </div>
       <div class="highlight-text">
         <div class="section-label">Audio Mixer</div>
@@ -582,10 +611,7 @@
 
     <div class="highlight reverse">
       <div class="highlight-visual">
-        <div class="visual-content">
-          <div class="big-emoji">&#128279;</div>
-          <div class="visual-label">Shortcuts & Webhook</div>
-        </div>
+        <img class="screenshot" src="images/feature-shortcuts.png" alt="Shortcuts & Actions" loading="lazy">
       </div>
       <div class="highlight-text">
         <div class="section-label">Integrations</div>

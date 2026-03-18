@@ -3,31 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StreamPad - Privacy Policy / プライバシーポリシー</title>
+<title>StreamPad - Privacy Policy</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; background: #fafafa; }
-  h1 { color: #1a1a2e; border-bottom: 2px solid #16213e; padding-bottom: 10px; }
-  h2 { color: #16213e; margin-top: 30px; }
-  h3 { color: #0f3460; }
-  .lang-toggle { text-align: center; margin: 20px 0; }
-  .lang-toggle button { padding: 8px 20px; margin: 0 5px; border: 1px solid #16213e; background: white; color: #16213e; border-radius: 5px; cursor: pointer; font-size: 14px; }
-  .lang-toggle button.active { background: #16213e; color: white; }
-  .section { margin-bottom: 20px; }
-  .updated { color: #666; font-size: 14px; }
-  ul { padding-left: 20px; }
-  .en { display: none; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --bg-primary: #08081a; --bg-card: #10102a; --border: #1a1a3e; --accent: #6c63ff; --accent-light: #a78bfa; --text-primary: #eeeef0; --text-secondary: #8888a0; --text-dim: #55556a; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif; color: var(--text-secondary); background: var(--bg-primary); line-height: 1.7; }
+  a { color: var(--accent-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,26,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 14px 24px; }
+  .nav-logo { font-size: 22px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.5px; }
+  .nav-logo span { background: linear-gradient(135deg, var(--accent), #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .nav-right a { color: var(--text-secondary); font-size: 14px; font-weight: 500; text-decoration: none; }
+  .nav-right a:hover { color: var(--text-primary); }
+  .lang-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .lang-toggle button { padding: 4px 10px; border: none; background: transparent; color: var(--text-dim); cursor: pointer; font-size: 11px; font-weight: 600; transition: all 0.2s; }
+  .lang-toggle button.active { background: var(--accent); color: #fff; }
+  .content { max-width: 800px; margin: 0 auto; padding: 100px 24px 60px; }
+  h1 { font-size: 32px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+  h2 { font-size: 20px; font-weight: 700; color: var(--text-primary); margin-top: 40px; margin-bottom: 12px; }
+  h3 { font-size: 16px; font-weight: 600; color: var(--accent-light); margin-top: 20px; margin-bottom: 8px; }
+  p { margin-bottom: 12px; }
+  .updated { color: var(--text-dim); font-size: 14px; margin-bottom: 32px; }
+  ul { padding-left: 20px; margin-bottom: 12px; }
+  li { margin-bottom: 6px; }
+  .section { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+  body:not(.lang-en) .en { display: none !important; }
+  body.lang-en .ja { display: none !important; }
+  footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 12px; color: var(--text-dim); }
 </style>
 </head>
 <body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" style="text-decoration:none">Stream<span>Pad</span></a>
+    <div class="nav-right">
+      <a href="index.html" class="ja">Home</a>
+      <a href="index.html" class="en">Home</a>
+      <a href="support.html" class="ja">FAQ</a>
+      <a href="support.html" class="en">FAQ</a>
+      <div class="lang-toggle">
+        <button class="active" onclick="showLang('ja')">JP</button>
+        <button onclick="showLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
 
-<div class="lang-toggle">
-  <button class="active" onclick="showLang('ja')">日本語</button>
-  <button onclick="showLang('en')">English</button>
-</div>
-
+<div class="content">
 <!-- 日本語 -->
 <div class="ja">
-<h1>StreamPad プライバシーポリシー</h1>
+<h1>プライバシーポリシー</h1>
 <p class="updated">最終更新日: 2026年3月4日</p>
 
 <div class="section">
@@ -39,7 +69,6 @@
 <h2>2. 収集する情報</h2>
 <h3>2.1 本アプリが直接収集する情報</h3>
 <p>本アプリは、ユーザーの個人情報を直接収集・保存しません。アプリの設定データ（テーマ、レイアウト、マクロ設定等）はすべてユーザーのデバイスにローカルに保存されます。</p>
-
 <h3>2.2 広告に関する情報</h3>
 <p>本アプリの無料版では、Google AdMob を使用して広告を表示しています。AdMob は以下の情報を収集する場合があります：</p>
 <ul>
@@ -49,10 +78,8 @@
   <li>広告の表示・クリックに関するデータ</li>
 </ul>
 <p>詳細は <a href="https://policies.google.com/privacy">Google のプライバシーポリシー</a> をご確認ください。</p>
-
 <h3>2.3 Bluetooth情報</h3>
 <p>本アプリは、BLE対応充電器（Anker等）のリアルタイム電力データを表示するためにBluetoothを使用します。Bluetooth経由で取得したデータはデバイス内でのみ使用され、外部に送信されることはありません。</p>
-
 <h3>2.4 ローカルネットワーク</h3>
 <p>本アプリは、macOS/Windows コンパニオンアプリとの接続にローカルネットワークを使用します。通信はローカルネットワーク内でのみ行われ、インターネット経由で外部サーバーにデータが送信されることはありません。</p>
 </div>
@@ -104,7 +131,7 @@
 
 <!-- English -->
 <div class="en">
-<h1>StreamPad Privacy Policy</h1>
+<h1>Privacy Policy</h1>
 <p class="updated">Last updated: March 4, 2026</p>
 
 <div class="section">
@@ -116,7 +143,6 @@
 <h2>2. Information We Collect</h2>
 <h3>2.1 Information Collected Directly by the App</h3>
 <p>The App does not directly collect or store personal information. All app settings (themes, layouts, macro configurations, etc.) are stored locally on your device.</p>
-
 <h3>2.2 Advertising Information</h3>
 <p>The free version of the App uses Google AdMob to display advertisements. AdMob may collect the following information:</p>
 <ul>
@@ -126,10 +152,8 @@
   <li>Ad display and click data</li>
 </ul>
 <p>For details, please see <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
-
 <h3>2.3 Bluetooth Information</h3>
 <p>The App uses Bluetooth to display real-time power data from BLE-compatible chargers (such as Anker). Data obtained via Bluetooth is used only within the device and is never transmitted externally.</p>
-
 <h3>2.4 Local Network</h3>
 <p>The App uses the local network to connect with the macOS/Windows companion app. Communication occurs only within the local network, and no data is sent to external servers via the internet.</p>
 </div>
@@ -178,14 +202,21 @@
 <p>Email: <a href="mailto:streampad.app@gmail.com">streampad.app@gmail.com</a></p>
 </div>
 </div>
+</div>
+
+<footer>&copy; 2026 StreamPad. All rights reserved.</footer>
 
 <script>
 function showLang(lang) {
-  document.querySelector('.ja').style.display = lang === 'ja' ? 'block' : 'none';
-  document.querySelector('.en').style.display = lang === 'en' ? 'block' : 'none';
-  document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
+  if (lang === 'en') { document.body.classList.add('lang-en'); document.documentElement.lang = 'en'; }
+  else { document.body.classList.remove('lang-en'); document.documentElement.lang = 'ja'; }
+  document.querySelectorAll('.lang-toggle button').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.lang-toggle button').forEach(function(b) {
+    if ((lang === 'ja' && b.textContent === 'JP') || (lang === 'en' && b.textContent === 'EN')) b.classList.add('active');
+  });
+  try { localStorage.setItem('streampad-lang', lang); } catch(e) {}
 }
+(function() { try { var s = localStorage.getItem('streampad-lang'); if (s === 'en') showLang('en'); } catch(e) {} })();
 </script>
 </body>
 </html>
