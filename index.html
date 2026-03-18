@@ -226,16 +226,17 @@
     .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     .hero { padding-top: 120px; }
     /* ハイライトセクション モバイル最適化 */
-    .highlight-visual { padding: 24px 16px; min-height: 220px; }
-    .highlight-visual img.screenshot { max-width: 160px; }
+    .highlight-visual { padding: 24px 16px; min-height: auto; }
+    .highlight-visual img.screenshot { max-width: 200px; border: 1px solid rgba(108, 99, 255, 0.2); }
     .highlight-text h3 { font-size: 22px; }
-    .highlight-text p { font-size: 14px; }
+    .highlight-text p { font-size: 14px; word-break: normal; overflow-wrap: anywhere; }
     .highlight-text .tag-list { gap: 6px; }
     .highlight-text .tag { font-size: 11px; padding: 3px 10px; }
     .nowrap { white-space: normal; }
     section { padding: 60px 16px; }
     .highlight { margin-bottom: 60px; }
-    .section-inner { overflow-x: hidden; }
+    .section-desc { word-break: normal; overflow-wrap: anywhere; }
+    .feature-card p { word-break: normal; overflow-wrap: anywhere; }
   }
 </style>
 </head>
