@@ -237,6 +237,261 @@
     .highlight { margin-bottom: 60px; }
     .section-desc { word-break: normal; overflow-wrap: anywhere; }
     .feature-card p { word-break: normal; overflow-wrap: anywhere; }
+    .whats-new .section-inner { padding: 0 16px; }
+    .whats-new-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== What's New セクション ===== */
+  .whats-new {
+    padding: 80px 24px;
+    background: linear-gradient(180deg, rgba(108, 99, 255, 0.04) 0%, var(--bg-primary) 100%);
+    position: relative;
+  }
+  .whats-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+  }
+  .whats-new-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .new-feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 28px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.06);
+  }
+  .new-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    opacity: 0.6;
+  }
+  .new-feature-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.12);
+  }
+  .new-feature-card:hover::before { opacity: 1; }
+  .new-feature-card .feature-icon { margin-bottom: 16px; }
+  .new-feature-card h3 { font-size: 18px; color: var(--text-primary); margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+  .new-feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .new-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(52, 211, 153, 0.15);
+    color: var(--success);
+    flex-shrink: 0;
+  }
+
+  /* ===== Pro/Free ピルバッジ ===== */
+  .pill-pro {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(108, 99, 255, 0.18);
+    color: var(--accent-light);
+    flex-shrink: 0;
+  }
+  .pill-free {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(52, 211, 153, 0.15);
+    color: var(--success);
+    flex-shrink: 0;
+  }
+
+  /* ===== What's New 2x4 グリッド ===== */
+  .whats-new-grid-8 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  @media (max-width: 700px) {
+    .whats-new-grid-8 { grid-template-columns: 1fr; }
+  }
+
+  /* ===== 比較表スタイル ===== */
+  .comparison-table-wrapper {
+    margin-top: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: left;
+  }
+  .comparison-table thead th {
+    padding: 20px 24px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border);
+    background: rgba(108, 99, 255, 0.04);
+  }
+  .comparison-table thead th:first-child {
+    width: 60%;
+  }
+  .comparison-table thead th:nth-child(2),
+  .comparison-table thead th:nth-child(3) {
+    text-align: center;
+    width: 20%;
+  }
+  .comparison-table tbody td {
+    padding: 12px 24px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .comparison-table tbody tr:last-child td { border-bottom: none; }
+  .comparison-table tbody td:nth-child(2),
+  .comparison-table tbody td:nth-child(3) {
+    text-align: center;
+  }
+  .comparison-table .check-mark { color: var(--success); font-weight: bold; font-size: 16px; }
+  .comparison-table .cross-mark { color: var(--text-dim); font-size: 16px; }
+  .comparison-table .section-row td {
+    padding: 16px 24px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-light);
+    background: rgba(108, 99, 255, 0.03);
+    border-bottom: 1px solid var(--border);
+  }
+  .comparison-table .new-tag {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(52, 211, 153, 0.15);
+    color: var(--success);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .comparison-table .pro-tag {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(108, 99, 255, 0.15);
+    color: var(--accent-light);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  @media (max-width: 700px) {
+    .comparison-table thead th,
+    .comparison-table tbody td { padding: 10px 12px; font-size: 13px; }
+  }
+
+  /* ===== FAQ セクション ===== */
+  .faq-list {
+    max-width: 800px;
+    margin: 48px auto 0;
+    text-align: left;
+  }
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .faq-item:hover { border-color: var(--border-hover); }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    user-select: none;
+  }
+  .faq-question::after {
+    content: '+';
+    font-size: 20px;
+    color: var(--accent-light);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .faq-item.open .faq-question::after { content: '\2212'; }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 24px;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 600px;
+    padding: 0 24px 20px;
+  }
+  .faq-answer p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .faq-answer p:last-child { margin-bottom: 0; }
+  .faq-answer ol {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    padding-left: 20px;
+    margin-bottom: 8px;
+  }
+  .faq-answer ol li { margin-bottom: 4px; }
+  .faq-answer code {
+    background: rgba(108, 99, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--accent-light);
   }
 </style>
 </head>
@@ -256,6 +511,8 @@
       <a href="#pricing" class="en">Pricing</a>
       <a href="#download" class="ja">ダウンロード</a>
       <a href="#download" class="en">Download</a>
+      <a href="#faq" class="ja">FAQ</a>
+      <a href="#faq" class="en">FAQ</a>
       <a href="support.html" class="ja">サポート</a>
       <a href="support.html" class="en">Support</a>
       <div class="lang-toggle">
@@ -274,7 +531,7 @@
 <!-- ヒーロー -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge"><span class="dot"></span> Mac & Windows 対応 &#8212; v1.0 リリース</div>
+    <div class="hero-badge"><span class="dot"></span> Mac & Windows 対応 &#8212; v1.3 アップデート</div>
     <h1>もう、物理デバイスは<br><span class="gradient">いらない。</span></h1>
     <p><span class="nowrap">iPhone/iPad</span>を、カスタマイズ自在な<span class="nowrap">コントロールデッキ</span>に変える。<span class="nowrap">30アプリ対応</span>プリセット、<span class="nowrap">セットアップ不要。</span></p>
     <div class="hero-buttons">
@@ -288,6 +545,108 @@
       <div class="phone-frame"><img src="images/feature-mixer.png" alt="Audio Mixer" loading="lazy"></div>
       <div class="phone-frame"><img src="images/hero-dashboard.png" alt="StreamPad Dashboard" loading="lazy"></div>
       <div class="phone-frame"><img src="images/feature-theme.png" alt="Retro Theme" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- What's New v1.3 -->
+<section class="whats-new" data-version="1.3">
+  <div class="section-inner text-center">
+    <div class="section-label">What's New in v1.3</div>
+    <h2 class="section-title">コントロールが、<span class="nowrap">進化した。</span></h2>
+    <p class="section-desc center" style="margin-bottom: 8px;">v1.3では<span class="nowrap">MIDIコントローラー</span>機能を搭載。iPhoneが<span class="nowrap">本格的な</span><span class="nowrap">MIDIコントローラー</span>に。</p>
+    <div class="whats-new-grid-8">
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127929;</div>
+        <h3>MIDIコントローラー <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>iPhoneの<span class="nowrap">ダイヤル・フェーダー・ボタン</span>で、DAWの<span class="nowrap">パラメータ</span>を<span class="nowrap">MIDI制御。</span><span class="nowrap">CoreMIDI</span><span class="nowrap">仮想デバイス</span>で<span class="nowrap">自動認識。</span></p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127899;</div>
+        <h3>ダイヤル → MIDI CC <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p>ダイヤルを回して<span class="nowrap">フィルター</span>、パン、<span class="nowrap">エフェクト量</span>を<span class="nowrap">直感操作。</span>4つの<span class="nowrap">主要CC番号</span>に対応。</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128202;</div>
+        <h3>フェーダー → MIDI CC <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p><span class="nowrap">タッチストリップ</span>で<span class="nowrap">ボリューム</span>、<span class="nowrap">エクスプレッション</span>を<span class="nowrap">精密制御。</span><span class="nowrap">0-127</span>の<span class="nowrap">連続値送信。</span></p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#129345;</div>
+        <h3>ボタン → MIDI Note <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p><span class="nowrap">ボタンタップ</span>で<span class="nowrap">Note On/Off。</span><span class="nowrap">ドラムパッド</span>や<span class="nowrap">トリガー</span>として使用。<span class="nowrap">トグル/モーメンタリー</span>対応。</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127925;</div>
+        <h3>ピッチベンド <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>フェーダーで<span class="nowrap">14bit高精度</span>の<span class="nowrap">ピッチベンド。</span>滑らかな<span class="nowrap">音程制御。</span></p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128225;</div>
+        <h3>全16チャンネル <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p><span class="nowrap">MIDIチャンネル</span><span class="nowrap">1-16</span>を自由に選択。<span class="nowrap">複数トラック</span>を<span class="nowrap">同時制御。</span></p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128290;</div>
+        <h3>全CC番号(0-127) <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>128種類すべての<span class="nowrap">コントロールチェンジ</span>に対応。</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127919;</div>
+        <h3>プログラムチェンジ <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p><span class="nowrap">プリセット/パッチ</span>の切替を<span class="nowrap">ワンタッチ</span>で。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What's New v1.2 -->
+<section class="whats-new" data-version="1.2">
+  <div class="section-inner text-center">
+    <div class="section-label">What's New in v1.2</div>
+    <h2 class="section-title">サウンドが、進化した。</h2>
+    <p class="section-desc center" style="margin-bottom: 8px;">v1.2では<span class="nowrap">オーディオ機能</span>を大幅強化。<span class="nowrap">Pro限定の</span>高度な機能から、<span class="nowrap">Free版でも</span>使える新機能まで。</p>
+    <div class="whats-new-grid-8">
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128302;</div>
+        <h3>Magic Boost <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>動的コンプレッサー。小さい音を持ち上げ、大きい音を抑える。映画の台詞がクリアに。</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127899;</div>
+        <h3>10バンドEQ <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>アプリごとに<span class="nowrap">31Hz〜16kHz</span>の<span class="nowrap">10バンド</span><span class="nowrap">パラメトリックEQ。</span>音を自在に調整。</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128266;</div>
+        <h3>Output Groups <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>複数デバイスに同時出力。スピーカーとヘッドフォンで同じ音楽を。</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127908;</div>
+        <h3>入力モニター <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>マイク入力を<span class="nowrap">リアルタイムモニタリング。</span>低レイテンシーの<span class="nowrap">IOProcベース。</span></p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127925;</div>
+        <h3>サンプルレート設定 <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>デバイスごとにサンプルレートを変更。<span class="nowrap">44.1kHz〜192kHz</span>対応。</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128293;</div>
+        <h3>Overdrive (200%) <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>音量を最大200%まで増幅。通常の2倍の音量で再生。</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127919;</div>
+        <h3>アプリ別出力デバイス <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p>アプリごとに異なる出力デバイスを割り当て。Spotifyはヘッドフォン、ゲームはスピーカーに。</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128202;</div>
+        <h3>スペクトラムアナライザー <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p>リアルタイム周波数分析。音の可視化で、サウンドをもっと直感的に。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -312,7 +671,7 @@
       <div class="feature-card">
         <div class="feature-icon">&#127911;</div>
         <h3>オーディオミキサー</h3>
-        <p>アプリごとの音量を<span class="nowrap">0〜200%</span>で個別制御。<span class="nowrap">10バンドEQ</span>、<span class="nowrap">スペクトラムアナライザー</span>、<span class="nowrap">6種のEQプリセット</span>搭載。</p>
+        <p>アプリごとの音量を<span class="nowrap">0〜200%</span>で個別制御。<span class="nowrap">10バンドEQ</span>、<span class="nowrap">スペクトラムアナライザー</span>搭載。<span class="nowrap">Magic Boost</span>で音圧を自動最適化、<span class="nowrap">Output Groups</span>で複数デバイスに同時出力。</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">&#127909;</div>
@@ -462,37 +821,97 @@
     <div class="section-label">Pricing</div>
     <h2 class="section-title">あなたに合ったプランを。</h2>
     <p class="section-desc center">基本機能は無料。Proに<span class="nowrap">アップグレード</span>して、すべての機能を解放。</p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-badge free">FREE</div>
-        <h3>StreamPad Free</h3>
-        <p class="price-desc">まずは試してみる</p>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span>テーマ3種（Cyberpunk / Minimal / Neon）</li>
-          <li><span class="limit">&#9679;</span>最大2ページ / 10アイテムまで</li>
-          <li><span class="limit">&#9679;</span>プロファイル1つ</li>
-          <li><span class="limit">&#9679;</span>マクロ3個 / サウンド3個</li>
-          <li><span class="check">&#10003;</span>キーボードショートカット送信</li>
-          <li><span class="check">&#10003;</span>OBS Studio連携</li>
-          <li><span class="check">&#10003;</span>音楽コントロール</li>
-        </ul>
+    <div class="comparison-table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>機能</th>
+            <th>Free</th>
+            <th>Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row"><td colspan="3">&#127911; オーディオミキサー</td></tr>
+          <tr><td>アプリ別音量制御（0〜100%）</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>アプリ別ミュート</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>アプリ別出力デバイス指定 <span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>アプリ別バランス / パン（L/R）</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>リアルタイムレベルメーター</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>スペクトラムアナライザー <span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>システム音量 / ミュート</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>マイク音量 / ミュート / レベルメーター</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Quick Config（設定保存）</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>ヘッドフォンEQプリセット</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Overdrive（音量200%）<span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>10バンドパラメトリックEQ <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Magic Boost（動的コンプレッサー）<span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Output Groups（複数デバイス同時出力）<span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>入力モニター <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>サンプルレート設定 <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr class="section-row"><td colspan="3">&#127929; MIDIコントローラー</td></tr>
+          <tr><td>ダイヤル → MIDI CC（主要4CC）<span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>フェーダー → MIDI CC <span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>ボタン → MIDI Note On/Off <span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>全CC番号(0-127) <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>全16チャンネル <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>ピッチベンド <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>プログラムチェンジ <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr class="section-row"><td colspan="3">&#9889; コントロール &amp; 連携</td></tr>
+          <tr><td>デバイスカスタム名 / アイコン</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>OBS Studio連携</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>30アプリプリセット</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>18デザインテーマ（一部）</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>マクロ自動化</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>ショートカット / Webhook連携</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr class="section-row"><td colspan="3">&#128142; Pro限定</td></tr>
+          <tr><td>プロファイル自動切替 <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>テンプレート管理 <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>全18テーマ利用可能 <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>広告非表示 <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner text-center">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">OBS Studioとの接続方法は？</div>
+        <div class="faq-answer">
+          <ol>
+            <li>OBS Studio 28以上をインストール</li>
+            <li>OBS → ツール → WebSocketサーバー設定 → 「WebSocketサーバーを有効にする」をON</li>
+            <li>ポート番号を確認（デフォルト: <code>4455</code>）、必要ならパスワードを設定</li>
+            <li>StreamPad Companion → メニューバー → 設定 → OBS Studio → URLに <code>ws://localhost:4455</code> を入力</li>
+            <li>パスワードを設定している場合は入力</li>
+            <li>「保存＆テスト」をクリックして接続確認</li>
+          </ol>
+        </div>
       </div>
-      <div class="price-card featured">
-        <div class="price-badge pro">PRO</div>
-        <h3>StreamPad Pro</h3>
-        <p class="price-desc">すべてを解放</p>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span>全18テーマ解放</li>
-          <li><span class="check">&#10003;</span>ページ数・アイテム数 無制限</li>
-          <li><span class="check">&#10003;</span>プロファイル無制限＋自動切替</li>
-          <li><span class="check">&#10003;</span>マクロ・サウンドボード 無制限</li>
-          <li><span class="check">&#10003;</span>オーディオミキサー（アプリ別制御）</li>
-          <li><span class="check">&#10003;</span>イコライザー＆スペクトラム</li>
-          <li><span class="check">&#10003;</span>30アプリ対応プリセット</li>
-          <li><span class="check">&#10003;</span>フォルダ＆カスタム画像</li>
-          <li><span class="check">&#10003;</span>Shortcuts & Webhook</li>
-          <li><span class="check">&#10003;</span>広告なし</li>
-        </ul>
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">StreamPadは無料で使えますか？</div>
+        <div class="faq-answer">
+          <p>はい！基本機能は全て無料でお使いいただけます。Proにアップグレードすると、10バンドEQ、Magic Boost、Output Groups、サンプルレート設定などの高度な機能が解放されます。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Windows対応していますか？</div>
+        <div class="faq-answer">
+          <p>はい！Windows Companion（.NET 8）を無料でダウンロードできます。Windows 10 2004以降 / Windows 11に対応しています。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">MIDIコントローラーとして使うには？</div>
+        <div class="faq-answer">
+          <p>Companionを起動するだけで<span class="nowrap">仮想MIDIデバイス</span>「StreamPad」が<span class="nowrap">自動作成</span>されます。<span class="nowrap">ダイヤル・フェーダー・ボタン</span>の編集画面で<span class="nowrap">アクションタイプ</span>を「MIDI」に変更し、CC番号や<span class="nowrap">ノート番号</span>を設定してください。GarageBand、Logic Pro、<span class="nowrap">Ableton Live</span>等のDAWで<span class="nowrap">自動認識</span>されます。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -538,7 +957,7 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge"><span class="dot"></span> Mac & Windows &#8212; v1.0 Release</div>
+    <div class="hero-badge"><span class="dot"></span> Mac & Windows &#8212; v1.3 Update</div>
     <h1>Ditch the<br><span class="gradient">hardware.</span></h1>
     <p>Transform your <span class="nowrap">iPhone/iPad</span> into a fully customizable control deck. <span class="nowrap">30 app presets,</span> zero setup required.</p>
     <div class="hero-buttons">
@@ -552,6 +971,108 @@
       <div class="phone-frame"><img src="images/feature-mixer.png" alt="Audio Mixer" loading="lazy"></div>
       <div class="phone-frame"><img src="images/hero-dashboard.png" alt="StreamPad Dashboard" loading="lazy"></div>
       <div class="phone-frame"><img src="images/feature-theme.png" alt="Retro Theme" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- What's New v1.3 -->
+<section class="whats-new" data-version="1.3">
+  <div class="section-inner text-center">
+    <div class="section-label">What's New in v1.3</div>
+    <h2 class="section-title">Control, Evolved.</h2>
+    <p class="section-desc center" style="margin-bottom: 8px;">v1.3 introduces MIDI Controller mode. Turn your iPhone into a real MIDI controller.</p>
+    <div class="whats-new-grid-8">
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127929;</div>
+        <h3>MIDI Controller <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Control your DAW parameters via MIDI from iPhone dials, faders, and buttons. Auto-recognized via CoreMIDI virtual device.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127899;</div>
+        <h3>Dial &rarr; MIDI CC <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p>Rotate dials to control filters, pan, and effects. 4 essential CC numbers included.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128202;</div>
+        <h3>Fader &rarr; MIDI CC <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p>Precise touch strip control for volume and expression. Continuous 0-127 values.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#129345;</div>
+        <h3>Button &rarr; MIDI Note <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p>Tap buttons for Note On/Off. Use as drum pads or triggers. Toggle/Momentary modes.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127925;</div>
+        <h3>Pitch Bend <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>14-bit high-precision pitch bend via fader. Smooth pitch control.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128225;</div>
+        <h3>All 16 Channels <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Freely select MIDI channels 1-16. Control multiple tracks simultaneously.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128290;</div>
+        <h3>All CC Numbers (0-127) <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Access all 128 control change types.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127919;</div>
+        <h3>Program Change <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Switch presets and patches with one touch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What's New v1.2 -->
+<section class="whats-new" data-version="1.2">
+  <div class="section-inner text-center">
+    <div class="section-label">What's New in v1.2</div>
+    <h2 class="section-title">Sound, Evolved.</h2>
+    <p class="section-desc center" style="margin-bottom: 8px;">v1.2 brings major audio upgrades. From Pro-exclusive advanced features to new capabilities available even on Free.</p>
+    <div class="whats-new-grid-8">
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128302;</div>
+        <h3>Magic Boost <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Dynamic compressor. Lifts quiet sounds, tames loud ones. Movie dialogue has never been clearer.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127899;</div>
+        <h3>10-Band EQ <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Per-app <span class="nowrap">31Hz-16kHz</span> <span class="nowrap">10-band</span> parametric EQ. Shape your sound with precision.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128266;</div>
+        <h3>Output Groups <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Output to multiple devices simultaneously. Send the same music to speakers and headphones.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127908;</div>
+        <h3>Input Monitor <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Monitor microphone input in real-time. Low-latency IOProc-based monitoring.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127925;</div>
+        <h3>Sample Rate <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Change sample rate per device. Supports <span class="nowrap">44.1kHz to 192kHz.</span></p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128293;</div>
+        <h3>Overdrive (200%) <span class="new-badge">NEW</span> <span class="pill-pro">PRO</span></h3>
+        <p>Boost volume up to 200%. Play at twice the normal loudness.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#127919;</div>
+        <h3>Per-App Output Device <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p>Route each app to a different output device. Spotify to headphones, games to speakers.</p>
+      </div>
+      <div class="new-feature-card">
+        <div class="feature-icon">&#128202;</div>
+        <h3>Spectrum Analyzer <span class="new-badge">NEW</span> <span class="pill-free">FREE</span></h3>
+        <p>Real-time frequency analysis. Visualize your sound intuitively.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -574,7 +1095,7 @@
       <div class="feature-card">
         <div class="feature-icon">&#127911;</div>
         <h3>Audio Mixer</h3>
-        <p><span class="nowrap">Per-app</span> volume <span class="nowrap">0-200%.</span> <span class="nowrap">10-band</span> graphic EQ, <span class="nowrap">real-time</span> <span class="nowrap">spectrum analyzer,</span> <span class="nowrap">6 EQ presets.</span></p>
+        <p><span class="nowrap">Per-app</span> volume <span class="nowrap">0-200%.</span> <span class="nowrap">10-band</span> graphic EQ, <span class="nowrap">real-time</span> <span class="nowrap">spectrum analyzer.</span> <span class="nowrap">Magic Boost</span> auto-optimizes loudness, <span class="nowrap">Output Groups</span> for multi-device output.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">&#127909;</div>
@@ -720,37 +1241,97 @@
     <div class="section-label">Pricing</div>
     <h2 class="section-title">Choose your plan.</h2>
     <p class="section-desc center">Core features are free. Upgrade to Pro to unlock everything.</p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-badge free">FREE</div>
-        <h3>StreamPad Free</h3>
-        <p class="price-desc">Try it out</p>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span>3 themes (Cyberpunk / Minimal / Neon)</li>
-          <li><span class="limit">&#9679;</span>Up to 2 pages / 10 items</li>
-          <li><span class="limit">&#9679;</span>1 profile</li>
-          <li><span class="limit">&#9679;</span>3 macros / 3 sounds</li>
-          <li><span class="check">&#10003;</span>Keyboard shortcut delivery</li>
-          <li><span class="check">&#10003;</span>OBS Studio integration</li>
-          <li><span class="check">&#10003;</span>Music control</li>
-        </ul>
+    <div class="comparison-table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Free</th>
+            <th>Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row"><td colspan="3">&#127911; Audio Mixer</td></tr>
+          <tr><td>Per-app volume control (0-100%)</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Per-app mute</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Per-app output device <span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Per-app balance / pan (L/R)</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Real-time level meter</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Spectrum analyzer <span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>System volume / mute</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Mic volume / mute / level meter</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Quick Config (save settings)</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Headphone EQ presets</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Overdrive (200% volume) <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>10-band parametric EQ <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Magic Boost (dynamic compressor) <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Output Groups (multi-device output) <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Input monitor <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Sample rate settings <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr class="section-row"><td colspan="3">&#127929; MIDI Controller</td></tr>
+          <tr><td>Dial &rarr; MIDI CC (4 essential CCs) <span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Fader &rarr; MIDI CC <span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Button &rarr; MIDI Note On/Off <span class="new-tag">NEW</span></td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>All CC numbers (0-127) <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>All 16 channels <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Pitch bend <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Program change <span class="new-tag">NEW</span> <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr class="section-row"><td colspan="3">&#9889; Controls &amp; Integrations</td></tr>
+          <tr><td>Device custom name / icon</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>OBS Studio integration</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>30 app presets</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>18 design themes (partial)</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Macro automation</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Shortcuts / Webhook integration</td><td><span class="check-mark">&#10003;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr class="section-row"><td colspan="3">&#128142; Pro Exclusive</td></tr>
+          <tr><td>Auto profile switch <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Template management <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>All 18 themes unlocked <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+          <tr><td>Ad-free <span class="pro-tag">PRO</span></td><td><span class="cross-mark">&#8212;</span></td><td><span class="check-mark">&#10003;</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ (English) -->
+<section>
+  <div class="section-inner text-center">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How do I connect to OBS Studio?</div>
+        <div class="faq-answer">
+          <ol>
+            <li>Install OBS Studio 28 or later</li>
+            <li>OBS &rarr; Tools &rarr; WebSocket Server Settings &rarr; Enable "Enable WebSocket server"</li>
+            <li>Note the port number (default: <code>4455</code>), set a password if needed</li>
+            <li>StreamPad Companion &rarr; Menu Bar &rarr; Settings &rarr; OBS Studio &rarr; Enter <code>ws://localhost:4455</code> as URL</li>
+            <li>Enter the password if you set one</li>
+            <li>Click "Save &amp; Test" to verify the connection</li>
+          </ol>
+        </div>
       </div>
-      <div class="price-card featured">
-        <div class="price-badge pro">PRO</div>
-        <h3>StreamPad Pro</h3>
-        <p class="price-desc">Unlock everything</p>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span>All 18 themes unlocked</li>
-          <li><span class="check">&#10003;</span>Unlimited pages & items</li>
-          <li><span class="check">&#10003;</span>Unlimited profiles + auto-switch</li>
-          <li><span class="check">&#10003;</span>Unlimited macros & sound board</li>
-          <li><span class="check">&#10003;</span>Audio mixer (per-app control)</li>
-          <li><span class="check">&#10003;</span>Equalizer & spectrum analyzer</li>
-          <li><span class="check">&#10003;</span>30 app presets</li>
-          <li><span class="check">&#10003;</span>Folders & custom images</li>
-          <li><span class="check">&#10003;</span>Shortcuts & Webhook</li>
-          <li><span class="check">&#10003;</span>Ad-free</li>
-        </ul>
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is StreamPad free to use?</div>
+        <div class="faq-answer">
+          <p>Yes! All core features are completely free. Upgrade to Pro to unlock advanced features like 10-band EQ, Magic Boost, Output Groups, sample rate settings, and more.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Does it support Windows?</div>
+        <div class="faq-answer">
+          <p>Yes! The Windows Companion (.NET 8) is available as a free download. It supports Windows 10 2004+ and Windows 11.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How do I use StreamPad as a MIDI controller?</div>
+        <div class="faq-answer">
+          <p>Just launch Companion and a virtual MIDI device "StreamPad" is automatically created. In the edit screen for dials, faders, or buttons, change the action type to "MIDI" and configure the CC number or note number. It is automatically recognized by DAWs like GarageBand, Logic Pro, and Ableton Live.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -809,8 +1390,10 @@
     <div class="footer-col">
       <h4 class="ja">サポート</h4>
       <h4 class="en">Support</h4>
-      <a href="support.html" class="ja">よくある質問</a>
-      <a href="support.html" class="en">FAQ</a>
+      <a href="#faq" class="ja">よくある質問</a>
+      <a href="#faq" class="en">FAQ</a>
+      <a href="support.html" class="ja">サポートページ</a>
+      <a href="support.html" class="en">Support Page</a>
       <a href="mailto:streampad.app@gmail.com" class="ja">お問い合わせ</a>
       <a href="mailto:streampad.app@gmail.com" class="en">Contact</a>
     </div>
